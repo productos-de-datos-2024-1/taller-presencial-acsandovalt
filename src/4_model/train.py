@@ -22,9 +22,9 @@ optional arguments:
 
 
 
-
-
 """
+
+#python src/4_model/train.py --max_features 7 --cv 5 --max_neighbors 10
 
 import argparse
 import json
