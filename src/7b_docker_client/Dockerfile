@@ -1,13 +1,14 @@
-#
+
+# 
 # Docker Client
 # =============================================================================
 #
 # Implementa una app que usa el servidor API para obtener pronósticos de los
-# precios de vivienda dadas sus características.
+# precios de vivienda dadas sus características.
 #
-# Para ejecutar el servidor y la app web se debe tener creaada una red:
+# Para ejecutar el servidor y la app web se debe tener creaada una red:
 #
-# $ docker network create mynetwork
+# $ docker network create mynetwork
 #
 # La imagen es creada con:
 # 
@@ -25,7 +26,7 @@
 # Definición de la imagen base
 FROM python:3.9-alpine
 
-# Folder de la app dentro del contenedor
+# Folder de la app dentro del contenedor
 WORKDIR /app
 COPY . /app
 
@@ -33,10 +34,11 @@ COPY . /app
 RUN pip install --upgrade pip
 RUN pip install pandas flask requests
 
-# Datalake
+# Datalake
 RUN mkdir /datalake
 
-# Punto de entrada
+# Punto de entrada
 EXPOSE 5000
 WORKDIR /workspace
 ENTRYPOINT ["python", "/app/app.py"]
+
